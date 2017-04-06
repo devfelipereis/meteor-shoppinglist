@@ -26,12 +26,12 @@ class ProductList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.products.map(product =>
+         {/*  {this.props.products.map(product =>
             <TableRow>
               <td>{product.name}</td>
               <td>{product.amount}</td>
             </TableRow>
-          )}
+          )} */}
         </tbody>
       </Table>
     )
