@@ -6,16 +6,16 @@ import Article from 'grommet/components/Article'
 import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import CreateProductForm from './product/CreateProductForm'
-import ProductList from './productList/ProductList';
+import ProductList from './productList/container/ProductList';
 
 export const App = ( { children } ) => (
   <GrommetApp centered={true}>
     <Article>
       <Tabs>
-        <Tab title='Lista de compras'>
+        <Tab title='Shopping List'>
           <ProductList />
         </Tab>
-        <Tab title='Cadastro'>
+        <Tab title='Add new Items'>
           <CreateProductForm />
         </Tab>
       </Tabs>

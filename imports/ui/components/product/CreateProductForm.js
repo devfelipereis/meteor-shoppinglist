@@ -56,11 +56,8 @@ class CreateProductForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-});
-
 const mapDispatchToProps = (dispatch) => ({
   dispatchCreateProduct: product => dispatch(createProduct(product)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateProductForm);
+export default connect(null, mapDispatchToProps)(CreateProductForm);
