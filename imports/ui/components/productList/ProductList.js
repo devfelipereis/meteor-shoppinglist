@@ -40,7 +40,7 @@ class ProductList extends React.Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    products: state
+    products: state.products
   };
 };
 
