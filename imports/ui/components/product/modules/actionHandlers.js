@@ -13,6 +13,9 @@ handleCreateProduct = (product) => {
 }
 
 handleDeleteProduct = (productId) => {
+
+  console.log("deleting product with id", productId);
+
   Meteor.call('products.delete', productId, (error, response) => {
     if (error) {
       throw new Meteor.Error("product-delete", error.reason);
