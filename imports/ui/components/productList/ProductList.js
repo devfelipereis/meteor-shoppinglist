@@ -3,15 +3,24 @@ import { connect } from 'react-redux';
 import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
 
-export default class ProductList extends React.Component {
+import { deleteProduct } from '../product/modules/product';
+
+class ProductList extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
   render() {
+
+    const { dispatchDeleteProduct } = this.props
+
+    const handleDeleteProduct = (productId) => {
+      dispatchDeleteProduct(productId)
+    }
+
     return (
-      <Table>
+      <Table selectable={true}>
         <thead>
           <tr>
             <th>Name</th>
@@ -20,7 +29,7 @@ export default class ProductList extends React.Component {
         </thead>
         <tbody>
           {this.props.products.map(product =>
-            <TableRow>
+            <TableRow key={product._id} onClick={handleDeleteProduct.bind(this, product._id)}>
               <td>{product.name}</td>
               <td>{product.amount}</td>
             </TableRow>
@@ -30,3 +39,9 @@ export default class ProductList extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatchDeleteProduct: productId => dispatch(deleteProduct(productId)),
+});
+
+export default connect(null, mapDispatchToProps)(ProductList);

@@ -26,7 +26,7 @@ class CreateProductForm extends React.Component {
 
     const { dispatchCreateProduct } = this.props
 
-    const create = (event) => {
+    const handleCreateProduct = (event) => {
       event.preventDefault();
       const product = this.state;
       dispatchCreateProduct(product)
@@ -49,7 +49,7 @@ class CreateProductForm extends React.Component {
           <Button label='Submit'
             type='submit'
             primary={true}
-            onClick={create.bind(this)} />
+            onClick={handleCreateProduct.bind(this)} />
         </Footer>
       </Form>
     )

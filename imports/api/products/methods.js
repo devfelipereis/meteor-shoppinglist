@@ -16,3 +16,11 @@ Meteor.methods({
     });
   },
 });
+
+Meteor.methods({
+  'products.delete'(productId) {
+    check(productId, String);
+
+    return Products.remove(productId);
+  },
+});

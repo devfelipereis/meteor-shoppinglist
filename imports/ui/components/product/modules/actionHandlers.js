@@ -11,3 +11,14 @@ handleCreateProduct = (product) => {
     }
   });
 }
+
+handleDeleteProduct = (productId) => {
+  Meteor.call('products.delete', productId, (error, response) => {
+    if (error) {
+      throw new Meteor.Error("product-delete", error.reason);
+
+    } else {
+      console.log('Product deleted', response);
+    }
+  });
+}
